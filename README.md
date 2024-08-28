@@ -24,7 +24,14 @@ See projekt on lihtne trips-traps-trull mäng, mis on loodud Reacti abil ja dock
 
 6. Mängige
 
-
+## Probleemid ja lahendused
+Projekti dockeriseerimisel puutusin kokku järgmiste probleemidega:
+1. Dockeri installimine Windowsis: Alguses esines probleeme Windowsile Dockeri 
+installimisega. Sain Googliga jagu.
+2. Nginx seadistamine: Pidin looma eraldi nginx.conf faili, et React rakendus töötaks 
+korrektselt Dockeris.
+3. Staatiliste failide teed: Algselt otsis React rakendus faile valest kataloogist. 
+Lahenduseks oli "homepage" välja muutmine package.json failis
 
 Originaal: https://github.com/ucfx/TIC-TAC-TOE-GAME
 

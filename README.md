@@ -1,28 +1,39 @@
-<h1 align="center">TIC-TAC-TOE-GAME</h1>
+<h1 align="center">REACT'I TIC-TAC-TOE MÄNG DOCKERIS.</h1>
 
+See projekt on lihtne trips-traps-trull mäng, mis on loodud Reacti abil ja dockeriseeritud.
 
-## :rocket: Knowledges
- - `ReactJS`
- - `Framer Motion`
+## Rakenduse käivitamine Dockeris
 
-## :book: How to use
-To clone and run this application, you'll need [Git](https://git-scm.com/downloads) and [ReactJS](https://react.dev/) installed on your computer. From your command line:
+1. Veenduge, et Docker on Teie arvutisse installitud.
 
-```
-# Clone this repository
-$ git clone https://github.com/ucfx/TIC-TAC-TOE-GAME.git
+2. Kloonige see repositoorium:
 
-# Go into the repository
-$ cd TIC-TAC-TOE-GAME
+ `$ git clone https://github.com/jmrtechnnn/TIC-TAC-TOE-GAME.git`
 
-# Install dependencies
-$ npm install
+` $ cd TIC-TAC-TOE-GAME `
 
-# Run the app
-$ npm start
-```
-## :link: Demo
-  - <a target="_blank" href="https://ucfx.github.io/TIC-TAC-TOE-GAME/"> Click Here </a> to see and play by yourself a demo of the game.
+3. Ehitage Docker image(pane nimeks näiteks tic-tac-toe-react ):
 
-## :mailbox: Contact
-  - <a target="_blank" href="mailto:ucefhammadi@gmail.com">E-mail</a>
+` $ docker build -t tic-tac-toe-react .`
+
+4. Käivitage konteiner:
+
+` $ docker run -p 8080:80 tic-tac-toe-react `
+
+5. Avage veebibrauser ja minge aadressile `http://localhost:8080`
+
+6. Mängige
+
+## Probleemid ja lahendused
+
+Projekti dockeriseerimisel puutusin kokku järgmiste probleemidega:
+
+1. Dockeri installimine Windowsis: Alguses esines probleeme Windowsile Dockeri installimisega. Sain Googliga jagu.
+
+2. Nginx seadistamine: Pidin looma eraldi nginx.conf faili, et React rakendus töötaks korrektselt Dockeris.
+
+3. Staatiliste failide teed: Algselt otsis React rakendus faile valest kataloogist. Lahenduseks oli "homepage" välja muutmine package.json failis.
+ 
+
+Originaal: https://github.com/ucfx/TIC-TAC-TOE-GAME
+
